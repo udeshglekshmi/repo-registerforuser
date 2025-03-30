@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<!-- Declaring thymeleaf namespace -->
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<title>User Register</title>
+</head>
+
+<body>
+
+	<!-- Registration Form -->
+    <!-- th:action="@{/users/register}" -> Defines form submission URL -->
+    <!-- th:object="${user}" -> Binds form fields to the UserDto object passed from the controller -->
+
+<form th:action="@{/users/register}" th:object="${user}" method="post">
+		<!-- Input field for username -->
+        <!-- th:field="*{username}" -> Binds the input to the 'username' property of UserDto -->
+<label>User Name</label>
+<input type="text" th:field="*{username}" required>
+<br> 
+
+		<!-- Input field for email -->
+        <!-- th:field="*{email}" -> Binds the input to the 'email' property of UserDto -->
+<label>Email</label> 
+<input type="text" th:field="*{email}" required> 
+<br> 
+<button type="submit">Register</button> 
+</form>
+</body>
+</html>
